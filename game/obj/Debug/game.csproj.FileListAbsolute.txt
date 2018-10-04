@@ -1,7 +1,0 @@
-c:\users\zuzi\Source\Repos\game\game\obj\Debug\game.csprojAssemblyReference.cache
-c:\users\zuzi\Source\Repos\game\game\obj\Debug\game.csproj.CoreCompileInputs.cache
-c:\users\zuzi\Source\Repos\game\game\bin\Debug\game.exe.config
-c:\users\zuzi\Source\Repos\game\game\bin\Debug\game.exe
-c:\users\zuzi\Source\Repos\game\game\bin\Debug\game.pdb
-c:\users\zuzi\Source\Repos\game\game\obj\Debug\game.exe
-c:\users\zuzi\Source\Repos\game\game\obj\Debug\game.pdb

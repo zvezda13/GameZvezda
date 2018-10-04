@@ -9,22 +9,8 @@ namespace game
 {
     class Program
     {
-        static void Main(string[] args)
-
-        {
-            Console.WriteLine("Press arrows or Esc to exit");
-
-            while (kb.Key != ConsoleKey.Escape)
-            { 
-            GetInput();
-            Update();
-            Draw();
-            }
-
-            Thread.Sleep(2000);
-        }
-
         static ConsoleKeyInfo kb;
+
         public static void GetInput()
         {
             do
@@ -46,7 +32,6 @@ namespace game
 
             } while (kb.Key != ConsoleKey.Escape);
         }
-
         public static void Update()
         {
 
@@ -56,13 +41,19 @@ namespace game
 
         }
 
-        public static void Sleep(int sec)
+        static void Main(string[] args)
         {
+            Console.WriteLine("Press arrows or Esc to exit");
 
+            while (kb.Key != ConsoleKey.Escape)
+            {
+                GetInput();
+                Update();
+                Draw();
+                Thread.Sleep(500);
+            }
         }
     }
-
-
 }
 
 
