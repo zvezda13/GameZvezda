@@ -13,18 +13,11 @@ namespace game
 
         {
             Console.WriteLine("Press arrows or Esc to exit");
-            Program zvezda=new Program();
-           
-               zvezda.GetKey();
-          
-           
+            GetKey();
         }
-         // ConsoleKeyInfo kb = Console.ReadKey();   //hvashta push-natite buttoni ot keybord-a 
 
-
-        ConsoleKeyInfo kb;
-        public void GetKey()
-
+        static ConsoleKeyInfo kb;
+        public static void GetKey()
         {
             do
             {
@@ -42,7 +35,7 @@ namespace game
                         break;
                 }
 
-                
+
             } while (kb.Key != ConsoleKey.Escape);
         }
 
