@@ -13,43 +13,47 @@ namespace game
 
         public static void GetInput()
         {
-            do
-            {
-                kb = Console.ReadKey();
-                switch (kb.Key)
-                {
-                    case (ConsoleKey.LeftArrow):
-                        Console.WriteLine("Left Arrow pressed");
-                        break;
-                    case (ConsoleKey.RightArrow):
-                        Console.WriteLine("Right Arrow pressed");
-                        break;
-                    default:
-                        Console.WriteLine("Neprovereno kopche e natisnato");
-                        break;
-                }
 
+            kb = Console.ReadKey();
 
-            } while (kb.Key != ConsoleKey.Escape);
         }
         public static void Update()
         {
 
         }
-        public static void Draw()
+        public static void Draw(int x, int y)
         {
 
+            if (x >= 0 && y >= 0)
+            {
+
+                if (ConsoleKey.LeftArrow != 0)
+                    x++;
+
+                if (ConsoleKey.RightArrow != 0)
+                    x--;
+
+            }
+
+
         }
+
 
         static void Main(string[] args)
         {
             Console.WriteLine("Press arrows or Esc to exit");
-
+            char he = 'O';
+            int x = 1;
+            int y = 1;
             while (kb.Key != ConsoleKey.Escape)
             {
                 GetInput();
                 Update();
-                Draw();
+                Console.Clear();
+
+                Draw(x, y);
+                Console.SetCursorPosition(x, y);
+                Console.Write(he);
                 Thread.Sleep(500);
             }
         }
