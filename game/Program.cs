@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-//using System.Windows.Forms;
+using System.Threading;
 
 namespace game
 {
@@ -13,11 +13,19 @@ namespace game
 
         {
             Console.WriteLine("Press arrows or Esc to exit");
-            GetKey();
+
+            while (kb.Key != ConsoleKey.Escape)
+            { 
+            GetInput();
+            Update();
+            Draw();
+            }
+
+            Thread.Sleep(2000);
         }
 
         static ConsoleKeyInfo kb;
-        public static void GetKey()
+        public static void GetInput()
         {
             do
             {
@@ -39,7 +47,19 @@ namespace game
             } while (kb.Key != ConsoleKey.Escape);
         }
 
+        public static void Update()
+        {
 
+        }
+        public static void Draw()
+        {
+
+        }
+
+        public static void Sleep(int sec)
+        {
+
+        }
     }
 
 
