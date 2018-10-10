@@ -16,33 +16,30 @@ namespace game
 
         public static void GetInput()
         {
-
             kb = Console.ReadKey();
-
         }
+
         public static void Update()
         {
             if (kb.Key.Equals(ConsoleKey.LeftArrow))
             {
                 x -= 1;
             }
-            Console.SetCursorPosition(x, y);
-            if (kb.Key.Equals(ConsoleKey.RightArrow))
+           if (kb.Key.Equals(ConsoleKey.RightArrow))
             {
                 x += 1;
             }
-            Console.SetCursorPosition(x, y);
         }
         public static void Draw()
         {
+            Console.Clear();
+            Console.SetCursorPosition(x, y);
             Console.Write(he);
         }
 
         static void Main(string[] args)
         {
-
-                    
-            while (kb.Key != ConsoleKey.Escape)
+          while (kb.Key != ConsoleKey.Escape)
             {
                 GetInput();
                 Console.Clear();
