@@ -10,9 +10,9 @@ namespace game
     class Program
     {
         static ConsoleKeyInfo kb;
-        int x = 1;
-        int y = 1;
-        char he = 'O';
+        static int x = 1;
+        static int y = 1;
+        static char he = 'O';
 
         public static void GetInput()
         {
@@ -24,19 +24,19 @@ namespace game
         {
 
         }
-        public static void Draw(int x, int y)
+        public static void Draw()
         {
             
             if (kb.Key.Equals(ConsoleKey.LeftArrow))
             {
-                x +=1;
+                x -=1;
                
               
             }
             Console.SetCursorPosition(x, y);
             if (kb.Key.Equals(ConsoleKey.RightArrow))
             {
-                x -= 1;
+                x += 1;
              
               
             }
@@ -59,8 +59,9 @@ namespace game
                 GetInput();
                 Update();
 
-                 Draw (zvezda.x,zvezda.y);
-                Console.Write(zvezda.he);
+                Console.Clear();
+                Draw ();
+                Console.Write(he);
 
 
             }
