@@ -22,48 +22,32 @@ namespace game
         }
         public static void Update()
         {
-
-        }
-        public static void Draw()
-        {
-            
             if (kb.Key.Equals(ConsoleKey.LeftArrow))
             {
-                x -=1;
-               
-              
+                x -= 1;
             }
             Console.SetCursorPosition(x, y);
             if (kb.Key.Equals(ConsoleKey.RightArrow))
             {
                 x += 1;
-             
-              
             }
             Console.SetCursorPosition(x, y);
-
         }
-
-
+        public static void Draw()
+        {
+            Console.Write(he);
+        }
 
         static void Main(string[] args)
         {
 
-            Program zvezda=new Program() ;
-   
-           
-            Console.WriteLine("Press arrows or Esc to exit");
-          
+                    
             while (kb.Key != ConsoleKey.Escape)
             {
                 GetInput();
-                Update();
-
                 Console.Clear();
+                Update();
                 Draw ();
-                Console.Write(he);
-
-
             }
         }
 
