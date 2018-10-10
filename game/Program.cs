@@ -10,9 +10,12 @@ namespace game
     class Program
     {
         static ConsoleKeyInfo kb;
-        static int x = 1;
-        static int y = 1;
+        static int x = 0;
+        static int y = 0;
+        static int height = 5;
+        static int weight = 5;
         static char he = 'O';
+      
 
         public static void GetInput()
         {
@@ -37,12 +40,32 @@ namespace game
             Console.Write(he);
         }
 
+        public static void DrawBorder()
+        {
+          
+            for (int y = 0; y < height; y++)
+            {
+                for (int x = 0; x < weight; x++)
+                {
+                    if (y > 0 )
+                    {
+                        Console.Write("|");
+                    }
+                    else
+                    {
+                        Console.Write("-");
+                    }
+                
+                 }
+                Console.WriteLine();
+            }
+        }
         static void Main(string[] args)
         {
           while (kb.Key != ConsoleKey.Escape)
             {
+                DrawBorder();
                 GetInput();
-                Console.Clear();
                 Update();
                 Draw ();
             }
