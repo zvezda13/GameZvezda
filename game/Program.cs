@@ -10,6 +10,9 @@ namespace game
     class Program
     {
         static ConsoleKeyInfo kb;
+        int x = 1;
+        int y = 1;
+        char he = 'O';
 
         public static void GetInput()
         {
@@ -23,40 +26,46 @@ namespace game
         }
         public static void Draw(int x, int y)
         {
-
-            if (x >= 0 && y >= 0)
+            
+            if (kb.Key.Equals(ConsoleKey.LeftArrow))
             {
-
-                if (ConsoleKey.LeftArrow != 0)
-                    x++;
-
-                if (ConsoleKey.RightArrow != 0)
-                    x--;
-
+                x +=1;
+               
+              
             }
-
+            Console.SetCursorPosition(x, y);
+            if (kb.Key.Equals(ConsoleKey.RightArrow))
+            {
+                x -= 1;
+             
+              
+            }
+            Console.SetCursorPosition(x, y);
 
         }
+
 
 
         static void Main(string[] args)
         {
+
+            Program zvezda=new Program() ;
+   
+           
             Console.WriteLine("Press arrows or Esc to exit");
-            char he = 'O';
-            int x = 1;
-            int y = 1;
+          
             while (kb.Key != ConsoleKey.Escape)
             {
                 GetInput();
                 Update();
-                Console.Clear();
 
-                Draw(x, y);
-                Console.SetCursorPosition(x, y);
-                Console.Write(he);
-                Thread.Sleep(500);
+                 Draw (zvezda.x,zvezda.y);
+                Console.Write(zvezda.he);
+
+
             }
         }
+
     }
 }
 
