@@ -13,7 +13,7 @@ namespace game
         static int x = 0;
         static int y = 0;
         static int height = 5;
-        static int weight = 5;
+        static int weight = 10;
         static char he = 'O';
       
 
@@ -43,22 +43,27 @@ namespace game
         public static void DrawBorder()
         {
           
-            for (int y = 0; y < height; y++)
+            for (int x = 0; x < weight; x++)
             {
-                for (int x = 0; x < weight; x++)
+                for (int y = 0; y < height; y++)
                 {
-                    if (y > 0 )
-                    {
-                        Console.Write("|");
-                    }
-                    else
+                    if (x == 0 || x == weight - 1 )
                     {
                         Console.Write("-");
                     }
-                
-                 }
-                Console.WriteLine();
+                    else if(y == 0 || y == height-1)
+                     {
+                       Console.Write("|");
+                     }
+                   
             }
+               
+            Console.WriteLine();
+            }
+        }
+        public static bool IsInsideRectangle( )
+        {
+            return y == 0;//|| y = height;
         }
         static void Main(string[] args)
         {
