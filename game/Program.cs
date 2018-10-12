@@ -50,13 +50,13 @@ namespace game
                 Console.Write("-");
             }
             Console.SetCursorPosition(0, 0);
-            for (int y = 0; y < height; y++)
+            for (int y = 0; y <= height; y++)
             {
                 Console.SetCursorPosition(0, y);
                 Console.Write("|");
             }
             Console.SetCursorPosition(width, 0);
-            for (int y = 0; y < height; y++)
+            for (int y = 0; y <= height; y++)
             {
                 Console.SetCursorPosition(width, y);
                 Console.Write("|");
