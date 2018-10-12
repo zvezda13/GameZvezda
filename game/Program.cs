@@ -41,15 +41,13 @@ namespace game
 
             for (int x = 0; x < width; x++)
             {
-                for (int y = 0; y < height; y++)
-                {
-                    if (x == 0 || x == width-1)
-                    {
-                        Console.Write("-");
-                    }
-                   
-                }
-             Console.WriteLine();
+              Console.Write("-");
+            }
+            Console.SetCursorPosition(0,height);
+
+            for (int x = 0; x < width; x++)
+            {
+                Console.Write("-");
             }
         }
 
