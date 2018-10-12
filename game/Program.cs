@@ -52,14 +52,14 @@ namespace game
             Console.SetCursorPosition(0, 0);
             for (int y = 0; y < height; y++)
             {
+                Console.SetCursorPosition(0, y);
                 Console.Write("|");
-                Console.WriteLine();
             }
             Console.SetCursorPosition(width, 0);
             for (int y = 0; y < height; y++)
             {
+                Console.SetCursorPosition(width, y);
                 Console.Write("|");
-                Console.WriteLine();
             }
 
         }
