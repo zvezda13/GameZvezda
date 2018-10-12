@@ -13,7 +13,7 @@ namespace game
         static int x = 0;
         static int y = 0;
         static int height = 10;
-        static int width = 50;
+        static int width = 30;
         static char he = 'O';
 
 
@@ -36,14 +36,21 @@ namespace game
         public static void Draw()
         {
             Console.Clear();
-            Console.SetCursorPosition(x, y);
+            Console.SetCursorPosition(0, 0);
             // Console.Write(he);
-           
+
             for (int x = 0; x < width; x++)
             {
-               Console.Write("-");
+                for (int y = 0; y < height; y++)
+                {
+                    if (x == 0 || x == width-1)
+                    {
+                        Console.Write("-");
+                    }
+                   
+                }
+             Console.WriteLine();
             }
-            Console.WriteLine();
         }
 
         static void Main(string[] args)
