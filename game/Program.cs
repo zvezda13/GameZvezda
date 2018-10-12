@@ -7,13 +7,13 @@ using System.Threading;
 
 namespace game
 {
-    class Program
+    class Program 
     {
         static ConsoleKeyInfo kb;
         static int x = 0;
         static int y = 0;
-        static int height = 4;
-        static int weight = 5;
+        static int height = 10;
+        static int width = 50;
         static char he = 'O';
 
 
@@ -37,30 +37,13 @@ namespace game
         {
             Console.Clear();
             Console.SetCursorPosition(x, y);
-           // Console.Write(he);
-            char[,] arr = new char[6, 4]
-
-             {
-                 {'-','-','-','-' },
-                 {'|',' ',' ','|' },
-                 {'|',' ',' ','|' },
-                 {'|',' ',' ','|' },
-                 {'|',' ',' ','|' },
-                 {'-','-','-','-' }
-
-            };
-            int rowLength = arr.GetLength(0);
-            int colLength = arr.GetLength(1);
-
-            for (int i = 0; i < rowLength; i++)
+            // Console.Write(he);
+           
+            for (int x = 0; x < width; x++)
             {
-                for (int j = 0; j < colLength; j++)
-                {
-                    Console.Write(string.Format("{0} ", arr[i, j]));
-                }
-                Console.Write(Environment.NewLine + Environment.NewLine);
+               Console.Write("-");
             }
-          
+            Console.WriteLine();
         }
 
         static void Main(string[] args)
