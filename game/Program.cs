@@ -12,8 +12,9 @@ namespace game
         static ConsoleKeyInfo kb;
         static int x = 0;
         static int y = 0;
+        static int x1 = 0;
         static int height = 10;
-        static int width = 30;
+        static int width = 40;
         static char he = 'O';
 
 
@@ -24,21 +25,25 @@ namespace game
 
         public static void Update()
         {
+            x1 = width / 2;
             if (kb.Key.Equals(ConsoleKey.LeftArrow))
             {
-                x -= 1;
+                x1 -= 1;
             }
             if (kb.Key.Equals(ConsoleKey.RightArrow))
             {
-                x += 1;
+                x1 += 1;
             }
+           
+            Console.SetCursorPosition(x1, height - 1);
+            Console.Write(he);
+
         }
         public static void Draw()
         {
             Console.Clear();
             Console.SetCursorPosition(0, 0);
-            // Console.Write(he);
-
+           
             for (int x = 0; x < width; x++)
             {
               Console.Write("-");
@@ -62,6 +67,8 @@ namespace game
                 Console.Write("|");
             }
 
+            Console.SetCursorPosition(width/2, height-1);
+            Console.Write(he);
         }
 
         static void Main(string[] args)
@@ -71,7 +78,6 @@ namespace game
                 Draw();
                 GetInput();
                 Update();
-               
             }
         }
 
