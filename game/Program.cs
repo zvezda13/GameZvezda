@@ -13,7 +13,7 @@ namespace game
         static int x = 0;
         static int y = 0;
         static int x1 = 0;
-        static int height = 10;
+         static int height = 10;
         static int width = 40;
         static char he = 'O';
 
@@ -26,7 +26,7 @@ namespace game
         public static void Update()
         {
             x1 = width / 2;
-            if (kb.Key.Equals(ConsoleKey.LeftArrow))
+             if (kb.Key.Equals(ConsoleKey.LeftArrow))
             {
                 x1 -= 1;
             }
@@ -34,9 +34,9 @@ namespace game
             {
                 x1 += 1;
             }
-           
-            Console.SetCursorPosition(x1, height - 1);
             Console.Write(he);
+            Console.SetCursorPosition(x1, height - 1);
+           
 
         }
         public static void Draw()
@@ -78,7 +78,7 @@ namespace game
                 Draw();
                 GetInput();
                 Update();
-            }
+             }
         }
 
     }
