@@ -25,16 +25,22 @@ namespace game
 
         public static void Update()
         {
-            x1 = width / 2;
-             if (kb.Key.Equals(ConsoleKey.LeftArrow))
+            Console.SetCursorPosition(width / 2, height - 1);
+            Console.Write(he);
+            if (kb.Key.Equals(ConsoleKey.LeftArrow))
             {
+                Console.Write(he);
                 x1 -= 1;
             }
+            Console.SetCursorPosition(x1, height - 1);
             if (kb.Key.Equals(ConsoleKey.RightArrow))
             {
+               
                 x1 += 1;
+                Console.Write(he);
+
             }
-            Console.Write(he);
+            
             Console.SetCursorPosition(x1, height - 1);
            
 
@@ -42,7 +48,7 @@ namespace game
         public static void Draw()
         {
             Console.Clear();
-            Console.SetCursorPosition(0, 0);
+           // Console.SetCursorPosition(0, 0);
            
             for (int x = 0; x < width; x++)
             {
@@ -67,18 +73,34 @@ namespace game
                 Console.Write("|");
             }
 
-            Console.SetCursorPosition(width/2, height-1);
-            Console.Write(he);
+        }
+        static void PrintDiagonal()
+        {
+            int[,] arr = new int[, ] 
+              {{ 1, 9, 15 }
+                ,{ 2,5,16 }
+                ,{ 3,7,2} };
+            
+            for (int i = 0; i < arr.GetLength(0); i++)
+            {
+                for (int j = 0; j < arr.GetLength(1); j++)
+                {
+                    if(i ==j)
+                    Console.Write(arr[i,j]);
+                }
+            }
         }
 
         static void Main(string[] args)
         {
-          while (kb.Key != ConsoleKey.Escape)
-            {
-                Draw();
-                GetInput();
-                Update();
-             }
+            PrintDiagonal();
+            //while (kb.Key != ConsoleKey.Escape)
+            //{
+            //    GetInput();
+            //    Update();
+            //    Draw();
+            //    Thread.Sleep(600);
+            //}
         }
 
     }
