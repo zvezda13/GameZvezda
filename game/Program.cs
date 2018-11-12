@@ -7,13 +7,13 @@ using System.Threading;
 
 namespace game
 {
-    class Program 
+    class Program
     {
         static ConsoleKeyInfo kb;
         static int x = 0;
         static int y = 0;
         static int x1 = 0;
-         static int height = 10;
+        static int height = 10;
         static int width = 40;
         static char he = 'O';
 
@@ -35,26 +35,26 @@ namespace game
             Console.SetCursorPosition(x1, height - 1);
             if (kb.Key.Equals(ConsoleKey.RightArrow))
             {
-               
+
                 x1 += 1;
                 Console.Write(he);
 
             }
-            
+
             Console.SetCursorPosition(x1, height - 1);
-           
+
 
         }
         public static void Draw()
         {
             Console.Clear();
-           // Console.SetCursorPosition(0, 0);
-           
+            // Console.SetCursorPosition(0, 0);
+
             for (int x = 0; x < width; x++)
             {
-              Console.Write("-");
+                Console.Write("-");
             }
-            Console.SetCursorPosition(0,height);
+            Console.SetCursorPosition(0, height);
 
             for (int x = 0; x < width; x++)
             {
@@ -76,18 +76,14 @@ namespace game
         }
         static void PrintDiagonal()
         {
-            int[,] arr = new int[, ] 
+            int[,] arr = new int[,]
               {{ 1, 9, 15 }
                 ,{ 2,5,16 }
                 ,{ 3,7,2} };
-            
+
             for (int i = 0; i < arr.GetLength(0); i++)
             {
-                for (int j = 0; j < arr.GetLength(1); j++)
-                {
-                    if(i ==j)
-                    Console.Write(arr[i,j]);
-                }
+                Console.Write(arr[i, i]);
             }
         }
 
