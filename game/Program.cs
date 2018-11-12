@@ -74,22 +74,42 @@ namespace game
             }
 
         }
-        static void PrintDiagonal()
-        {
-            int[,] arr = new int[,]
+
+        static int[,] arr = new int[,]
               {{ 1, 9, 15 }
                 ,{ 2,5,16 }
                 ,{ 3,7,2} };
-
+        static void PrintCentralDiagonal()
+        {
             for (int i = 0; i < arr.GetLength(0); i++)
             {
                 Console.Write(arr[i, i]);
             }
         }
+        static void PrintSecondaryDiagonal()
+        {
+            for (int i = 0; i < arr.GetLength(0); i++)
+            {
+                for (int j = 0; j < arr.GetLength(1); j++)
+                {
+                    if (j == arr.GetLength(1) - (i + 1))
+                    {
+                        Console.WriteLine(arr[i, j]);
+                    }
+                }
+            }
+
+        }
+        static void PrintSecondaryDiagonalOposite()
+        {
+
+        }
+
 
         static void Main(string[] args)
         {
-            PrintDiagonal();
+            PrintCentralDiagonal();
+            PrintSecondaryDiagonal();
             //while (kb.Key != ConsoleKey.Escape)
             //{
             //    GetInput();
