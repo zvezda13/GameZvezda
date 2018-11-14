@@ -20,14 +20,13 @@ namespace game
                 Console.Write(arr[i, i] + ",");
             }
         }
+  
         static void PrintSecondaryDiagonal()
         {
             for (int i = 0; i < arr.GetLength(0); i++)
             {
                 int j = (arr.GetLength(0) - (i + 1));
-                    {
-                        Console.Write(arr[i, j] + ",");
-                    }
+                Console.Write(arr[i, j] + ",");     
             }
         }
         static void PrintReversedSecDiagonal(int[,] arr)
@@ -47,13 +46,17 @@ namespace game
             for (int i = 0; i < arr.GetLength(0); i++)
             {
                 int j = (arr.GetLength(0) - (i + 1));        //printiram obyrnatiq diagonal
-                {
-                    Console.Write(arr[i, j] + ",");
-                }
+                Console.Write(arr[i, j] + ",");
             }
 
         }
-
+        static void PrintReverceCentralDiagonal()
+        {
+            for (int i = arr.GetLength(0) - 1; i >= 0; i--)
+            {
+                Console.Write(arr[i, i] + ",");
+            }
+        }
         static void Main(string[] args)
         {
             PrintCentralDiagonal();
@@ -61,7 +64,9 @@ namespace game
             PrintSecondaryDiagonal();
             Console.WriteLine();
             PrintReversedSecDiagonal(arr);
-                   
+            Console.WriteLine();
+            PrintReverceCentralDiagonal();
+
             //while (kb.Key != ConsoleKey.Escape)
             //{
             //    GetInput();
