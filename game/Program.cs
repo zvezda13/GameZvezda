@@ -9,53 +9,32 @@ namespace game
 {
     class Program
     {
-        static int[,] arr = new int[,]
-              {{ 1, 9, 15 }
-                ,{ 2,5,16 }
-                ,{ 3,7,2} };
-        static void PrintCentralDiagonal()
+        static void PrintReverseArray()
         {
-            for (int i = 0; i < arr.GetLength(0); i++)
+            Console.WriteLine("Kolko elementa da ima masiva");
+            int n= Convert.ToInt32(Console.ReadLine());
+            int[] arr1 = new int[n];
+            Console.WriteLine("Vyvedi masiva");
+            for(int i=0;i < n; i++)
             {
-                Console.Write(arr[i, i] + ",");
+                arr1[i] = Convert.ToInt32(Console.ReadLine());
             }
-        }
-  
-        static void PrintSecondaryDiagonal()
-        {
-            for (int i = 0; i < arr.GetLength(0); i++)
+            for (int i = n-1; i >=0; i--)
             {
-                int j = (arr.GetLength(0) - (i + 1));
-                Console.Write(arr[i, j] + ",");     
-            }
-        }
-      
-        static void PrintReverceCentralDiagonal()
-        {
-            for (int i = arr.GetLength(0) - 1; i >= 0; i--)
-            {
-                Console.Write(arr[i, i] + ",");
-            }
-        }
-
-        static void PrintSecondaryReverseDiagonal()
-        {
-            for (int i = arr.GetLength(0)-1; i >=0; i--)
-            {
-                int j = (arr.GetLength(0) - (i + 1));
-                Console.Write(arr[i, j] + ",");
+                Console.Write("{0}",arr1[i]);
             }
         }
 
         static void Main(string[] args)
         {
-            PrintCentralDiagonal();
-            Console.WriteLine();
-            PrintSecondaryDiagonal();
-            Console.WriteLine();
-            PrintReverceCentralDiagonal();
-            Console.WriteLine();
-            PrintSecondaryReverseDiagonal();  
+            //PrintCentralDiagonal();
+            //Console.WriteLine();
+            //PrintSecondaryDiagonal();
+            //Console.WriteLine();
+            //PrintReverceCentralDiagonal();
+            //Console.WriteLine();
+            //PrintSecondaryReverseDiagonal();  
+            PrintReverseArray();
         }
 
     }
