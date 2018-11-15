@@ -29,27 +29,7 @@ namespace game
                 Console.Write(arr[i, j] + ",");     
             }
         }
-        static void PrintReversedSecDiagonal(int[,] arr)
-        {
-            int revers = 0;
-            for (int i = 0; i < arr.GetLength(0); i++)
-            {
-                for (int j = arr.GetLength(1); j > i; j--)
-                {
-                    revers = arr[i, j - 1];                   //obryshtam secondary diagonal
-                    arr[i, j - 1] = arr[j - 1, i];
-                    arr[j - 1, i] = revers;
-
-                }
-            }
-
-            for (int i = 0; i < arr.GetLength(0); i++)
-            {
-                int j = (arr.GetLength(0) - (i + 1));        //printiram obyrnatiq diagonal
-                Console.Write(arr[i, j] + ",");
-            }
-
-        }
+      
         static void PrintReverceCentralDiagonal()
         {
             for (int i = arr.GetLength(0) - 1; i >= 0; i--)
@@ -57,23 +37,25 @@ namespace game
                 Console.Write(arr[i, i] + ",");
             }
         }
+
+        static void PrintSecondaryReverseDiagonal()
+        {
+            for (int i = arr.GetLength(0)-1; i >=0; i--)
+            {
+                int j = (arr.GetLength(0) - (i + 1));
+                Console.Write(arr[i, j] + ",");
+            }
+        }
+
         static void Main(string[] args)
         {
             PrintCentralDiagonal();
             Console.WriteLine();
             PrintSecondaryDiagonal();
             Console.WriteLine();
-            PrintReversedSecDiagonal(arr);
-            Console.WriteLine();
             PrintReverceCentralDiagonal();
-
-            //while (kb.Key != ConsoleKey.Escape)
-            //{
-            //    GetInput();
-            //    Update();
-            //    Draw();
-            //    Thread.Sleep(600);
-            //}
+            Console.WriteLine();
+            PrintSecondaryReverseDiagonal();  
         }
 
     }
