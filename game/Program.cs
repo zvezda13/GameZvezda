@@ -9,6 +9,19 @@ namespace game
 {
     class Program
     {
+        static int[] arr = new int[] { 1, 9, 15 };
+
+        static int[] Arr1Rev(int[] arr)
+        {
+            int[] arr2 = new int[] { 1, 9, 15 };
+            for (int i = 0; i < arr.Length; i++)
+            {
+                arr2[i] = arr[(arr.Length-1)-i];
+                Console.Write("{0},", arr2[i]);
+            }
+            return arr2;
+        }
+
         static void PrintReverseArray()
         {
             Console.WriteLine("Kolko elementa da ima masiva");
@@ -27,14 +40,7 @@ namespace game
 
         static void Main(string[] args)
         {
-            //PrintCentralDiagonal();
-            //Console.WriteLine();
-            //PrintSecondaryDiagonal();
-            //Console.WriteLine();
-            //PrintReverceCentralDiagonal();
-            //Console.WriteLine();
-            //PrintSecondaryReverseDiagonal();  
-            PrintReverseArray();
+            Arr1Rev(arr);
         }
 
     }
