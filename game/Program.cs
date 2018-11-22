@@ -9,38 +9,46 @@ namespace game
 {
     class Program
     {
-        static int[] arr = new int[] { 1, 9, 15 };
-
-        static int[] Arr1Rev(int[] arr)
+        static int[] arr= new int[7];   // = Enumerable.Range(-10, 10).ToArray();
+        int Minimum = arr[0];
+        int Maximum = arr[0];
+        static int LimitToRange(int[] arr, int Minimum, int Maximum)
         {
-            int[] arr2 = new int[] { 1, 9, 15 };
-            for (int i = 0; i < arr.Length; i++)
+            int i= 0;
+            if (arr[i] < Minimum)
             {
-                arr2[i] = arr[(arr.Length-1)-i];
-                Console.Write("{0},", arr2[i]);
+                arr[i] = Minimum;
             }
-            return arr2;
+            if (arr[i] > Maximum)
+            {
+                arr[i] = Maximum;
+            }
+            return arr[i];
         }
-
-        static void PrintReverseArray()
+        static int Bigg(int[] arr)
         {
-            Console.WriteLine("Kolko elementa da ima masiva");
-            int n= Convert.ToInt32(Console.ReadLine());
-            int[] arr1 = new int[n];
-            Console.WriteLine("Vyvedi masiva");
-            for(int i=0;i < n; i++)
+            int temp = arr[0];
+            for (int i = 0; i < arr.Length - 1; i++)
             {
-                arr1[i] = Convert.ToInt32(Console.ReadLine());
+                if (arr[i] > temp)
+                {
+                    temp = arr[i];
+                }
             }
-            for (int i = n-1; i >=0; i--)
-            {
-                Console.Write("{0}",arr1[i]);
-            }
+           
+           Console.WriteLine("{0}",temp);
+
+            return temp;
         }
+        
 
         static void Main(string[] args)
         {
-            Arr1Rev(arr);
+            // Arr1Rev(arr);
+            int[] arr = new int[7] { 15, 9, 28, 15, 20, 5002, 2 };
+            Bigg(arr);
+            LimitToRange(arr, -5000, 5000);
+            
         }
 
     }
