@@ -9,21 +9,27 @@ namespace game
 {
     class Program
     {
-        static int[] arr= new int[7];   // = Enumerable.Range(-10, 10).ToArray();
+        static int[] arr= new int[7];  
         int Minimum = arr[0];
         int Maximum = arr[0];
         static int LimitToRange(int[] arr, int Minimum, int Maximum)
         {
-            int i= 0;
-            if (arr[i] < Minimum)
+            int limit = arr[0];
+            for (int i = 0; i < arr.Length-1; i++)
             {
-                arr[i] = Minimum;
+                if (arr[i] < Minimum)
+                {
+                    arr[i] = Minimum;
+                    Minimum = limit;
+                }
+                if (arr[i] > Maximum)
+                {
+                    arr[i] = Maximum;
+                    Maximum = limit;
+                }
             }
-            if (arr[i] > Maximum)
-            {
-                arr[i] = Maximum;
-            }
-            return arr[i];
+            
+            return limit;
         }
         static int Bigg(int[] arr)
         {
@@ -44,11 +50,9 @@ namespace game
 
         static void Main(string[] args)
         {
-            // Arr1Rev(arr);
-            int[] arr = new int[7] { 15, 9, 28, 15, 20, 5002, 2 };
-            Bigg(arr);
+            int[] arr = new int[7] { 15, 9, 28, -5001, 20, 5002, 2 };
             LimitToRange(arr, -5000, 5000);
-            
+            Bigg(arr);
         }
 
     }
