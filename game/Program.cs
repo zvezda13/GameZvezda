@@ -10,49 +10,37 @@ namespace game
     class Program
     {
         static int[] arr= new int[7];  
-        int Minimum = arr[0];
-        int Maximum = arr[0];
-        static int LimitToRange(int[] arr, int Minimum, int Maximum)
+        
+        static void MinMaxPrint(int[] arr, out int minVal,out int maxVal)
         {
-            int limit = arr[0];
-            for (int i = 0; i < arr.Length-1; i++)
-            {
-                if (arr[i] < Minimum)
-                {
-                    arr[i] = Minimum;
-                    Minimum = limit;
-                }
-                if (arr[i] > Maximum)
-                {
-                    arr[i] = Maximum;
-                    Maximum = limit;
-                }
-            }
-            
-            return limit;
-        }
-        static int Bigg(int[] arr)
-        {
-            int temp = arr[0];
+            minVal = arr[0];
             for (int i = 0; i < arr.Length - 1; i++)
             {
-                if (arr[i] > temp)
+                if (arr[i] < minVal)
                 {
-                    temp = arr[i];
+                    minVal = arr[i];
                 }
             }
-           
-           Console.WriteLine("{0}",temp);
+            Console.WriteLine("min:  {0}",minVal);
 
-            return temp;
+            maxVal = arr[0];
+            for (int i = 0; i < arr.Length - 1; i++)
+            {
+                if (arr[i] > maxVal)
+                {
+                    maxVal = arr[i];
+                }
+            }
+            Console.WriteLine("max:  {0}", maxVal);
+
         }
         
 
         static void Main(string[] args)
         {
-            int[] arr = new int[7] { 15, 9, 28, -5001, 20, 5002, 2 };
-            LimitToRange(arr, -5000, 5000);
-            Bigg(arr);
+            int[] arr = new int[7]{ 5001, 1, 2, 3, 4, -5001, 6 };
+            int minVal, maxVal;
+            MinMaxPrint(arr, out minVal, out maxVal);
         }
 
     }
