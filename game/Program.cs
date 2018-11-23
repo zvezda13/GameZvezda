@@ -11,36 +11,40 @@ namespace game
     {
         static int[] arr= new int[7];  
         
-        static void MinMaxPrint(int[] arr, out int minVal,out int maxVal)
+        static void DeleneDve(int[] arr, out int chetni,out int nechetni)
         {
-            minVal = arr[0];
-            for (int i = 0; i < arr.Length - 1; i++)
+            chetni = 0;
+            for (int i = 0; i < arr.Length; i++)
             {
-                if (arr[i] < minVal)
+                if (arr[i] % 2 ==0)
                 {
-                    minVal = arr[i];
+                    chetni += arr[i];
                 }
-            }
-            Console.WriteLine("min:  {0}",minVal);
 
-            maxVal = arr[0];
-            for (int i = 0; i < arr.Length - 1; i++)
+            }
+            nechetni = 0;
+            for (int i = 0; i < arr.Length; i++)
             {
-                if (arr[i] > maxVal)
+                if (arr[i] % 2 != 0)
                 {
-                    maxVal = arr[i];
+                    nechetni += arr[i];
                 }
-            }
-            Console.WriteLine("max:  {0}", maxVal);
 
+            }
+          
         }
-        
-
+        static void PrintSums(int[] arr, int chetni, int nechetni)
+        {
+            Console.WriteLine("SumChetni:  {0}", chetni);
+            Console.WriteLine("SumNeChetni:  {0}", nechetni);
+        }
+       
         static void Main(string[] args)
         {
-            int[] arr = new int[7]{ 5001, 1, 2, 3, 4, -5001, 6 };
-            int minVal, maxVal;
-            MinMaxPrint(arr, out minVal, out maxVal);
+            int[] arr = new int[7]{ 1, 2, 3, 4, 5, 6,7 };
+            int chetni, nechetni;
+            DeleneDve(arr, out chetni, out nechetni);
+            PrintSums(arr,  chetni, nechetni);
         }
 
     }
