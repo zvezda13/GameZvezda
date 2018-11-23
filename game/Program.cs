@@ -14,24 +14,17 @@ namespace game
         static void DeleneDve(int[] arr, out int chetni,out int nechetni)
         {
             chetni = 0;
+            nechetni = 0;
             for (int i = 0; i < arr.Length; i++)
             {
                 if (arr[i] % 2 ==0)
                 {
                     chetni += arr[i];
                 }
-
-            }
-            nechetni = 0;
-            for (int i = 0; i < arr.Length; i++)
-            {
-                if (arr[i] % 2 != 0)
-                {
+               
                     nechetni += arr[i];
-                }
-
             }
-          
+                      
         }
         static void PrintSums(int[] arr, int chetni, int nechetni)
         {
