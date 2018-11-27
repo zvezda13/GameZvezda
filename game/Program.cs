@@ -13,56 +13,37 @@ namespace game
 
        
         static List<int> elements = new List<int>();
-
-
-        static int DivideThree(List<int> elements)
-        {
-            int sum = 0;
-            foreach (int element in elements)
+        static List<int> DevideList (int[] arr)
+             {
+            for (int i = 0; i <arr.Length-1; i++)
             {
-                if (element % 3 == 0)
-                {
-                    sum+=element;
+                if (arr[i] % 3 == 0)
+                { 
+                   elements.Add(arr[i]);
                 }
             }
-            Console.WriteLine("Sum3:  {0}", sum);
-            return sum;
-         }
-
-            //void DeleneDve(int[] arr, out int chetni,out int nechetni)
-            //    { 
-            //        chetni = 0;
-            //        nechetni = 0;
-            //        for (int i = 0; i < arr.Length; i++)
-            //        {
-            //            if (arr[i] % 2 ==0)
-            //            {
-            //                chetni += arr[i];
-            //            }
-            //            else
-            //                nechetni += arr[i];
-            //        }
-
-            //    }
+            foreach (int item in elements)
+            {
+                Console.WriteLine("{0},", elements);
+            }
+            
+            return elements;
+             }
+                             
             static void PrintSums(int[] arr, int chetni, int nechetni)
         {
             Console.WriteLine("SumChetni:  {0}", chetni);
             Console.WriteLine("SumNeChetni:  {0}", nechetni);
+            Console.Write("{0},", elements);
             
         }
        
         static void Main(string[] args)
         {
-            //int[] arr = new int[7]{ 1, 2, 3, 4, 5, 6,7 };
-            elements.Add(1);
-            elements.Add(2);
-            elements.Add(3);
-            elements.Add(4);
-            elements.Add(5);
-            elements.Add(6);
-            DivideThree(elements);
-            //DeleneDve(arr, out chetni, out nechetni);
-            // PrintSums(arr,  chetni, nechetni);
+           int[] arr = new int[7]{ 1, 2, 3, 4, 5, 6,7 };
+
+           // PrintSums(arr,  chetni, nechetni);
+           DevideList(arr);
         }
 
     }
