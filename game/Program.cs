@@ -9,18 +9,22 @@ namespace game
 {
     class Program
     {
-        static List<int> GetList()
+        List<int> elements = new List<int>();
+        static List<int> GetList(List<int> elements)
         {
-            List<int> elements = new List<int>();
             for (int i = 0; i < 4; i++)
             {
                 elements.Add(i + 2);
             }
+            
+            return elements;
+        }
+        static void PrintList(List<int> elements)
+        {
             foreach (int item in elements)
             {
                 Console.Write("{0},", item);
             }
-            return elements;
         }
 
         static void RemoveFromList(List<int> elements, int index)
@@ -43,7 +47,8 @@ namespace game
         {
             List<int> elements = new List<int>();
             int index = 0;
-            GetList();
+            GetList(elements);
+            PrintList(elements);
             RemoveFromList(elements, index);
             PrintResultList(elements);
         }
