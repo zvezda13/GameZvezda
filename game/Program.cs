@@ -9,21 +9,28 @@ namespace game
 {
     class Program
     {
-        static int[] arr = new int[7];
-        static List<int> elements = new List<int>();
-        static List<int> DevideList(int[] arr)
+        static List<int> GetList()
         {
-            for (int i = 0; i < arr.Length - 1; i++)
+            List<int> elements = new List<int>();
+            for (int i = 0; i < 4; i++)
             {
-                if (arr[i] % 3 == 0)
-                {
-                    elements.Add(arr[i]);
-                }
+                elements.Add(i + 2);
+            }
+            foreach (int item in elements)
+            {
+                Console.Write("{0},", item);
             }
             return elements;
         }
 
-        static void PrintList(List<int> elements)
+        static void RemoveFromList(List<int> elements, int index)
+        {
+            Console.WriteLine("Please enter the index of the item to be removed");
+            index = Convert.ToInt32(Console.ReadLine());
+            elements.RemoveAt(index);
+        }
+
+        static void PrintResultList(List<int> elements)
         {
             foreach (int item in elements)
             {
@@ -31,11 +38,14 @@ namespace game
             }
         }
 
+
         static void Main(string[] args)
         {
-            int[] arr = new int[7] { 1, 2, 3, 4, 5, 6, 7 };
-            DevideList(arr);
-            PrintList(elements);
+            List<int> elements = new List<int>();
+            int index = 0;
+            GetList();
+            RemoveFromList(elements, index);
+            PrintResultList(elements);
         }
 
     }
