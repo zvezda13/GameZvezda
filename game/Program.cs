@@ -9,7 +9,6 @@ namespace game
 {
     class Program
     {
-        List<int> elements = new List<int>();
         static List<int> GetList(List<int> elements)
         {
             for (int i = 0; i < 4; i++)
