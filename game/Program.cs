@@ -9,13 +9,14 @@ namespace game
 {
     class Program
     {
-        static List<int> GetList(List<int> elements)
+        static List<int> GetList()
         {
+            List<int> elements = new List<int>();
             for (int i = 0; i < 4; i++)
             {
                 elements.Add(i + 2);
             }
-            
+
             return elements;
         }
         static void PrintList(List<int> elements)
@@ -24,12 +25,11 @@ namespace game
             {
                 Console.Write("{0},", item);
             }
+            Console.WriteLine("\nPlease enter the index of the item to be removed");
         }
 
         static void RemoveFromList(List<int> elements, int index)
         {
-            Console.WriteLine("Please enter the index of the item to be removed");
-            index = Convert.ToInt32(Console.ReadLine());
             elements.RemoveAt(index);
         }
 
@@ -41,13 +41,11 @@ namespace game
             }
         }
 
-
         static void Main(string[] args)
         {
-            List<int> elements = new List<int>();
-            int index = 0;
-            GetList(elements);
+            List<int> elements = GetList();
             PrintList(elements);
+            int index = Convert.ToInt32(Console.ReadLine());
             RemoveFromList(elements, index);
             PrintResultList(elements);
         }
