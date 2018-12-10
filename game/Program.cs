@@ -9,45 +9,28 @@ namespace game
 {
     class Program
     {
-        static List<int> GetList()
+        static List<string> GetList()
         {
-            List<int> elements = new List<int>();
-            for (int i = 0; i < 4; i++)
+            Console.WriteLine("Please enter strings to the list 'exit' will end it");
+            List<string> elements = new List<string>();
+            while (!elements.Contains("exit"))
             {
-                elements.Add(i + 2);
+                elements.Add(Console.ReadLine());
             }
-
             return elements;
         }
-        static void PrintList(List<int> elements)
+        static void PrintList(List<string> elements)
         {
-            foreach (int item in elements)
+            foreach (string item in elements)
             {
-                Console.Write("{0},", item);
-            }
-            Console.WriteLine("\nPlease enter the index of the item to be removed");
-        }
-
-        static void RemoveFromList(List<int> elements, int index)
-        {
-            elements.RemoveAt(index);
-        }
-
-        static void PrintResultList(List<int> elements)
-        {
-            foreach (int item in elements)
-            {
-                Console.Write("{0},", item);
+                Console.Write("{0} ,", item);
             }
         }
 
         static void Main(string[] args)
         {
-            List<int> elements = GetList();
+            List<string> elements = GetList();
             PrintList(elements);
-            int index = Convert.ToInt32(Console.ReadLine());
-            RemoveFromList(elements, index);
-            PrintResultList(elements);
         }
 
     }
